@@ -12,13 +12,13 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function getHumanChoice() {
-    let y = prompt("Choose between, Rock, Paper, or Scissors by typing in your selection.");
+    let y = prompt("Choose between, Rock, Paper, or Scissors by typing in your selection.").toLowerCase();
     console.log(y)
-    if (y === "Rock") {
+    if (y === "rock") {
         return "Rock";
-    } else if (y === "Paper") {
+    } else if (y === "paper") {
         return "Paper";
-    } else if (y === "Scissors") {
+    } else if (y === "scissors") {
         return "Scissors";
     } else {
         return getHumanChoice();
