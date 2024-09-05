@@ -1,1 +1,1 @@
-# odin_rock_paper_scissors
+This was made for an Odin Project assignment
