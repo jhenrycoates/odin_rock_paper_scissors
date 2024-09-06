@@ -1,7 +1,3 @@
-const humanSelection = getHumanChoice();
-console.log(humanSelection);
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
 
 function getComputerChoice() {
     let x = Math.random() * 10;
@@ -33,7 +29,13 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     
-    playRound(humanSelection, computerSelection);
+    for (i = 0; i <= 4; i++) {
+        let humanSelection = getHumanChoice();
+        console.log(humanSelection);
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+        playRound(humanSelection, computerSelection);
+    }
     
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
