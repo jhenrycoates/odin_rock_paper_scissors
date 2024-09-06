@@ -37,6 +37,14 @@ function playGame() {
         playRound(humanSelection, computerSelection);
     }
     
+    if (humanScore > computerScore) {
+        console.log("You win you beautiful genius")
+    } else if (computerScore > humanScore) {
+        console.log("Computer wins, can't trust 'em")
+    } else {
+        console.log("It's a draw, go again")
+    }
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
             return console.log("It's a Draw!");
