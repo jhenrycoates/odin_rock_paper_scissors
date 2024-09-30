@@ -7,6 +7,8 @@ const roundResultText = document.querySelector(".roundResult");
 const playerScoreNumber = document.querySelector(".playerScoreNumber");
 const computerScoreNumber = document.querySelector('.computerScoreNumber');
 const finalResultText = document.querySelector(".finalResult");
+const resetButton = document.querySelector(".resetButton");
+const rpsButtonChoices = document.querySelector(".rpsButtonContainer");
 
 function getComputerChoice() {
     const options = ["Rock", "Paper", "Scissors"];
@@ -41,8 +43,21 @@ function updateResults(playerChoice) {
     computerScoreNumber.innerText = computerScore;
     
     if (playerScore === 5 || computerScore === 5) {
-        finalResultText.innerText = `${playerScore === 3 ? "Player" : "Computer"} has won the game!` 
+        finalResultText.innerText = `${playerScore === 5 ? "Player" : "Computer"} has won the game!` 
+        rpsButtonChoices.style.display = "none";
+        resetButton.style.display = "block";
     }
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreNumber.innerText = playerScore;
+    computerScoreNumber.innerText = computerScore;
+    roundResultText.innerText = "";
+    finalResultText.innerText = "";
+    resetButton.style.display = "none";
+    rpsButtonChoices.style.display = "block";
 }
 
 playerRock.addEventListener("click", function() {
@@ -54,3 +69,5 @@ playerPaper.addEventListener("click", function() {
 playerScissors.addEventListener("click", function() {
     updateResults("Scissors");
 });
+resetButton.addEventListener("click", resetGame);
+
